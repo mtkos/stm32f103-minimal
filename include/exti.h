@@ -1,0 +1,5 @@
+#define EXTI 0x40010400
+#define   IMR 0x0
+#define   RTSR 0x8
+#define   FTSR 0xc
+#define   PR 0x14

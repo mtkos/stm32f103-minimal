@@ -1,0 +1,17 @@
+#define TIM2 0x40000000
+#define   CR1 0x0
+#define     CEN 1<<0
+#define   DIER 0xc
+#define     UDE 1<<8
+#define     UIE 1<<0
+#define   SR 0x10
+#define   CCMR2 0x1c
+#define     OC3M_2 1<<6
+#define     OC3M_1 1<<5
+#define     OC3M_0 1<<4
+#define     OC3PE 1<<3
+#define   CCER 0x20
+#define     CC3E 1<<8
+#define   ARR 0x2c
+#define   PSC 0x28
+#define   CCR3 0x3c

@@ -1,0 +1,9 @@
+#define DMA1 0x40020000
+#define   CCR2 0x1c
+#define     PSIZE16 1<<8
+#define     MINC 1<<7
+#define     DIR 1<<4
+#define     EN 1<<0
+#define   CNDTR2 0x20
+#define   CPAR2 0x24
+#define   CMAR2 0x28
