@@ -5,7 +5,7 @@
 .set CRH, 0x4
 .set ODR, 0xc
 .set PIN, 13
-.set PIN_Clear, (~(0xf))<<(4*(PIN - 8))
+.set PIN_Clear, ~((0xf)<<(4*(PIN - 8)))
 .set ResetValue, 0x44444444
 .set Pin_Output_PP_2MHz, (0x2)<<(4*(PIN - 8))
 
