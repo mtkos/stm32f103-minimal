@@ -29,7 +29,8 @@ void prog(){
     REG(RCC + APB2ENR) = IOPAEN | IOPCEN | AFIOEN;
 
     REG(GPIOA + CRL) &= Clear(PIN0);
-    REG(GPIOA + CRL) |= Input_Floating(PIN0);
+    REG(GPIOA + CRL) |= Input_PUPD(PIN0);
+    REG(GPIOA + BSRR) = 1<<PIN0;
 
     REG(GPIOC + CRH) &= Clear(PIN13 - 8);
     REG(GPIOC + CRH) |= Output_PP_2MHz(PIN13 - 8);
