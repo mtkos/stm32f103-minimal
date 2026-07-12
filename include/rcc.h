@@ -6,6 +6,8 @@
 #define   CFGR 0x4
 #define     HPRE_Reset_Mask 0xFFFFFF0F
 #define     HPRE_DIV1 0
+#define     USBPRE 1<<22
+#define     PLL_MUL6 (0b0100 << 18)
 #define     PLL_MUL9 (0b0111 << 18)
 #define     PLL_MUL12 (0b1010 << 18)
 #define     PLLSRC 1<<16
@@ -21,4 +23,5 @@
 #define     IOPAEN 1<<2
 #define     AFIOEN 1<<0
 #define   APB1ENR 0x1c
+#define     USBEN 1<<23
 #define     TIM2EN 1<<0

@@ -1,0 +1,30 @@
+S Ci:1:091:0 s 80 06 0100 0000 0012 18 <                                                        //get device decriptor
+C Ci:1:091:0 0 18 = 12011001 00000040 83042157 00020102 0001                    
+S Ci:1:091:0 s 80 06 0200 0000 0009 9 <                                                         //get first 9 bytes of interface descriptor
+C Ci:1:091:0 0 9 = 09022200 01010080 32
+S Ci:1:091:0 s 80 06 0200 0000 0022 34 <                                                        //get interface descriptor
+C Ci:1:091:0 0 34 = 09022200 01010080 32090400 00010300 01000921 10010001 22190007 05810308
+S Ci:1:091:0 s 80 06 0300 0000 00ff 255 <                                                       //get langid string descriptor
+C Ci:1:091:0 0 6 = 06030904 1304
+S Ci:1:091:0 s 80 06 0302 0409 00ff 255 <                                                       //get product string descriptor
+C Ci:1:091:0 0 26 = 1a035500 53004200 20004b00 65007900 62006f00 61007200 6400
+S Ci:1:091:0 s 80 06 0301 0409 00ff 255 <                                                       //get manufacturer string descriptor
+C Ci:1:091:0 0 26 = 1a034300 6f006d00 70006100 6e007900 20006e00 61006d00 6500
+S Ci:1:091:0 s 80 06 0303 0409 00ff 255 <                                                       //get serial string descriptor
+C Ci:1:091:0 0 12 = 0c035600 32002e00 31003700
+S Co:1:091:0 s 00 09 0001 0000 0000 0                                                           //set configuration (can be ignored because there is only 1)
+C Co:1:091:0 0 0
+S Co:1:091:0 s 21 0a 0000 0000 0000 0                                                           //set idle (can be ignored)
+C Co:1:091:0 0 0
+S Ci:1:091:0 s 81 06 2200 0000 0019 25 <                                                        //get report descriptor
+C Ci:1:091:0 0 25 = 05010906 a1010507 19002aff 00150026 ff009501 75088100 c0
+S Ii:1:091:1 -115:8 1 <                                                                         //wait for press/release
+C Ii:1:091:1 0:8 1 = 05                                                                         //'b key' pressed
+S Ii:1:091:1 -115:8 1 <
+C Ii:1:091:1 0:8 1 = 00                                                                         //'key' released 
+S Ii:1:091:1 -115:8 1 <
+C Ii:1:091:1 0:8 1 = 05
+S Ii:1:091:1 -115:8 1 <
+C Ii:1:091:1 0:8 1 = 00
+
+REMARK: apparently, usbmon only starts working after the device has received an address, so the 'set address' request is not shown

@@ -3,7 +3,10 @@
 My ch32v003-minimal repository shows how to program the risc-v ch32v003 microcontroller without using proprietary software. The present repository does the same for the ARM-based STM32F103.
 The differences are explained in the Readme files of the programs.
 
-The following documentation has been used, in addtion to the architecture-independent resources used in the ch32v003-minimal repository:
+In addition, 3 programs have been added that show how to use the USB full-speed device interface, which is not present on ch32v003. They are, in order of increasing complexity: usb-hw,
+usb-minimal and usb-kbd.
+
+The following documentation has been used, in addition to the architecture-independent resources used in the ch32v003-minimal repository:
 
 [Cortex-M3] Cortex-M3 Devices Generic User Guide. Can be obtained from <https://developer.arm.com/documentation/dui0552/latest/>.
 

@@ -26,7 +26,5 @@ void prog(){
     REG(TIM2 + PSC) = PRESCALER_VALUE;
     REG(TIM2 + CR1) = CEN;
 
-    while(1){
-        __asm__ volatile("wfi");
-    }
+    __asm__ volatile("wfi");
 }
