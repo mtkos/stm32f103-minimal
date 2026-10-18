@@ -1,4 +1,5 @@
 #include <stdint.h>
+#include <stddef.h>
 
 #include "../include/common.h"
 #include "../include/rcc.h"
@@ -82,7 +83,8 @@ void handle_get_request(){
 
 void handle_set_request(){
 
-    REG(USB_PMA + 0*16 + COUNT_TX) = 0; //next IN packet must be zero length
+//    REG(USB_PMA + 0*16 + COUNT_TX) = 0; //next IN packet must be zero length
+    buffer_to_pma(0, NULL, 0);
 }
 
 void handle_ep0_setup(){
